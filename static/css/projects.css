@@ -62,3 +62,9 @@
 #projects .float-end .btn:focus {
     box-shadow: none !important;
 }
+/* Uniform project thumbnails */
+#projects .card-img-top {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top center;
+}

@@ -22,7 +22,7 @@ markup:
 
 params:
   title: "Abhi Sharma"
-  description: "Abhi Sharma — Senior Drupal Engineer and Solutions Lead with 15+ years building secure, scalable web platforms, now leading operations and technology at Insurance World Agency."
+  description: "Abhi Sharma — Senior Drupal Engineer and Solutions Lead with 15+ years building web platforms, and licensed P&C producer leading operations and technology at Insurance World Agency."
   favicon: "/images/AbhiSharma.jpg"
 
   useBootstrapCDN: false
@@ -56,7 +56,7 @@ params:
     intro: "Hi, my name is"
     title: "Abhi Sharma."
     subtitle: "I architect and ship web platforms — and automate the work around them."
-    content: "Senior Drupal Engineer and Solutions Lead with 15+ years building secure, scalable sites and multisites for enterprise, public-sector, and eCommerce clients. Today I lead technology and operations at an independent insurance agency, building automations and integrations that keep a small team moving fast."
+    content: "Senior Drupal Engineer and Solutions Lead with 15+ years building secure, scalable sites and multisites for enterprise, public-sector, and eCommerce clients. Today I help lead Insurance World Agency, an independent P&C agency in Downers Grove, IL, as a licensed producer running operations and technology. Reach out about a web platform, an automation project, or your insurance."
     image: /images/AbhiSharma.jpg
     bottomImage:
       enable: true
@@ -74,6 +74,8 @@ params:
           url: https://github.com/asharm8
         - icon: fas fa-envelope
           url: mailto:asharm8@gmail.com
+        - icon: fas fa-shield-alt
+          url: https://www.iwainsurance.com
 
   # About
   about:
@@ -88,9 +90,12 @@ params:
       outcomes. At Bounteous I moved from senior developer to solutions lead, shaping enterprise RFPs and SOWs that influenced
       $10MM+ in contracted work.
 
-      These days I lead operations and technology at Insurance World Agency, where I apply the same engineering mindset to a
-      small business: modernizing the web presence, wiring systems together with APIs, and automating the repetitive work so
-      the team can focus on clients.
+      Today I'm part of the leadership team at [Insurance World Agency](https://www.iwainsurance.com), an independent
+      agency (est. 1998) that quotes 50+ carriers for clients in Illinois and 25+ states. As a licensed Property & Casualty
+      producer, I run day-to-day operations and own the agency's technology: the website, quoting and intake flows, carrier
+      integrations, and the automations that let a small team serve clients like a much larger one.
+
+      So whether you need help with a web platform or want a second opinion on your auto, home, or business coverage, I'm glad to talk.
     skills:
       enable: true
       title: "Technologies I work with:"
@@ -115,19 +120,24 @@ params:
   experience:
     enable: true
     items:
-      - job: "Head of Marketing & Technology"
+      - job: "Head of Operations & Technology"
         company: "Insurance World Agency"
         companyUrl: "https://www.iwainsurance.com"
         date: "May 2023 - Present"
+        featuredLink:
+          enable: true
+          name: "Get an insurance quote"
+          url: "https://www.iwainsurance.com"
         info:
           enable: false
         content: |
-          Leading web, automation, and analytics for an independent insurance agency with 40+ carrier appointments.
+          Part of the leadership team of an independent P&C agency in Downers Grove, IL, founded in 1998, quoting 50+ carriers for clients in Illinois and 25+ states. Licensed Property & Casualty producer.
 
-          - Provide leadership across web, automation, and analytics to support quoting and service operations.
-          - Rebuilt the agency website as a modern React app, replacing WordPress, with quote requests routed straight to the team.
-          - Built n8n and API-driven automations that cut manual work, such as commission statement processing and routing office texts into Slack.
-          - Built campaigns and measurement to improve inbound lead quality and reduce friction across Auto, Home, and Commercial lines.
+          - Co-lead day-to-day agency operations: staffing and hiring, HR policy, team workflows, and service standards across Auto, Home, Life, and Commercial lines.
+          - Own the agency's technology strategy and stack, from the agency management system and carrier portals to the website, phones, and messaging.
+          - Rebuilt iwainsurance.com as a modern React site, replacing WordPress, with guided quote intake routed straight to the team.
+          - Built n8n and API-driven automations that remove manual work, including commission statement processing and routing client texts into the team's Slack.
+          - Built campaigns and measurement to improve inbound lead quality and grow the agency beyond referrals.
 
       - job: "Lead Solution Architect"
         company: "Whereoware"
@@ -217,13 +227,26 @@ params:
       - title: "Acquia Certified Front End Developer — Drupal 7"
         content: "Acquia"
       - title: "Insurance Producer License — Property & Casualty"
-        content: "Licensed insurance producer"
+        content: "Licensed producer with Insurance World Agency"
+        url: "https://www.iwainsurance.com"
 
   # Projects
   projects:
     enable: true
     title: "Key Projects"
     items:
+      - title: Insurance World Agency
+        content: "Rebuilt the agency's site from WordPress into a fast React app with guided quote intake for auto, home, business and life, routed straight to the team. Backed by n8n automations for messaging and back-office work."
+        image: /images/projects/iwa.jpg
+        featured:
+          name: Get a quote
+          link: https://www.iwainsurance.com
+        badges:
+          - "React"
+          - "n8n"
+          - "Automation"
+          - "Insurance"
+
       - title: Wilson Sporting Goods
         content: "Delivered the first blended multi-site eCommerce stack (Drupal + Magento + Akeneo) across wilson.com, slugger.com, demarini.com, wilsonteamshop.com and atecsports.com — editorial control with PIM-driven automation. 2 years, with Bounteous."
         image: /images/projects/hero-image-Wilson.png
@@ -239,6 +262,7 @@ params:
 
       - title: Enlyte
         content: "Led a global team to deliver an Acquia Site Studio Drupal 9 multisite with custom modules and REST integrations across enlyte.com, mitchell.com and genexservices.com. 8 months."
+        image: /images/projects/enlyte.jpg
         featured:
           name: Site
           link: https://www.enlyte.com
@@ -250,6 +274,7 @@ params:
 
       - title: Colorado Parks & Wildlife
         content: "Enhancements, performance tuning, and deployment hardening on Drupal for cpw.state.co.us; coordinated cross-team releases and documentation. Whereoware engagement."
+        image: /images/projects/cpw.jpg
         featured:
           name: Site
           link: https://cpw.state.co.us
@@ -260,6 +285,7 @@ params:
 
       - title: Vote411 — League of Women Voters
         content: "Platform updates and API integrations across Drupal and Java services to improve reliability and maintainability. Whereoware engagement."
+        image: /images/projects/vote411.jpg
         featured:
           name: Site
           link: https://www.vote411.org
@@ -270,6 +296,7 @@ params:
 
       - title: First Industrial — Drupal 10 Intranet
         content: "Post-tenure contract to re-platform the Drupal 7 intranet to Drupal 10; modernized the LAMP stack and remediated security findings. 3 months."
+        image: /images/projects/first-industrial.jpg
         badges:
           - "Drupal 10"
           - "Migration"
@@ -277,6 +304,7 @@ params:
 
       - title: Oklahoma Western District Court
         content: "WordPress security updates and server configuration hardening for okwd.uscourts.gov. 2 months."
+        image: /images/projects/okwd.jpg
         featured:
           name: Site
           link: https://www.okwd.uscourts.gov
@@ -288,7 +316,10 @@ params:
   # Contact
   contact:
     enable: true
-    content: "Whether it's a Drupal platform, a web rebuild, or automating the busywork in your business, I'm happy to talk. Drop me a line."
+    content: |-
+      **Technology:** a Drupal platform, a web rebuild, or automating the busywork in your business. Email me below.
+
+      **Insurance:** auto, home, business, or life coverage. [Get a quote from Insurance World Agency](https://www.iwainsurance.com) or mention it in your email and I'll take care of you personally.
     email: asharm8@gmail.com
     btnName: Email me
 
