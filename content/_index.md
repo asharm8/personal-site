@@ -9,4 +9,4 @@ outputs:
 - rss
 - json
 ---
-Proven Software Platform Engineer with experience leveraging agile, DevOps, and CI/CD to manage large scale distributed platforms both on prem and in public cloud.
+Senior Drupal Engineer and Solutions Lead with 15+ years building secure, scalable web platforms, now leading operations and technology at Insurance World Agency.
