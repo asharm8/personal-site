@@ -93,6 +93,9 @@ const keys = Object.keys(practices) as (keyof typeof practices)[];
     padding-block: clamp(3rem, 8vw, 6.5rem) clamp(3.5rem, 8vw, 6rem);
     overflow: hidden;
   }
+  .hero-text {
+    min-width: 0;
+  }
   .hero-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
@@ -122,6 +125,7 @@ const keys = Object.keys(practices) as (keyof typeof practices)[];
   }
   .switch-track {
     display: inline-flex;
+    flex-wrap: wrap;
     padding: 4px;
     border-radius: 999px;
     background: var(--sky-pale);
@@ -206,6 +210,31 @@ const keys = Object.keys(practices) as (keyof typeof practices)[];
     mix-blend-mode: multiply;
   }
 
+  /* Very narrow phones: three equal segments, labels may wrap */
+  @media (max-width: 23rem) {
+    .switch-track {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+      border-radius: 1.4rem;
+    }
+    .switch-btn {
+      white-space: normal !important;
+      line-height: 1.15;
+      padding: 0.55rem 0.4rem !important;
+      border-radius: 1.1rem;
+    }
+  }
+  @media (max-width: 30rem) {
+    .switch-track {
+      flex-wrap: nowrap;
+    }
+    .switch-btn {
+      padding: 0.55rem 0.7rem;
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+  }
   @media (max-width: 52rem) {
     .hero-grid {
       grid-template-columns: 1fr;

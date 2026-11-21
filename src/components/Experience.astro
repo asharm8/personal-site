@@ -8,16 +8,26 @@ import { experience } from '../data/site';
     {
       experience.map((job) => (
         <li class="job">
-          <p class="year" aria-hidden="true">{job.end}</p>
+          <p class="year" aria-hidden="true">
+            {job.end}
+            <span class="since">from {job.since}</span>
+          </p>
           <div class="detail">
             <h3>{job.role}</h3>
             <p class="meta">
-              <a href={job.url} target="_blank" rel="noopener">{job.company}</a>, {job.dates}
+              {job.url ? (
+                <a href={job.url} target="_blank" rel="noopener">{job.company}</a>
+              ) : (
+                job.company
+              )}
+              , {job.dates}
             </p>
             {job.summary && <p class="summary">{job.summary}</p>}
-            <ul>
-              {job.points.map((pt) => <li>{pt}</li>)}
-            </ul>
+            {job.points.length > 0 && (
+              <ul>
+                {job.points.map((pt) => <li>{pt}</li>)}
+              </ul>
+            )}
           </div>
         </li>
       ))
@@ -51,6 +61,15 @@ import { experience } from '../data/site';
     color: var(--sky);
     margin: 0;
     font-variant-numeric: tabular-nums;
+  }
+  .since {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-stretch: 100%;
+    letter-spacing: 0;
+    color: var(--ink-soft);
   }
   h3 {
     font-size: 1.35rem;

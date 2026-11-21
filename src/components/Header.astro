@@ -9,7 +9,7 @@ const links = [
 ---
 
 <div class="flag" aria-hidden="true"><span></span><span></span></div>
-<header class="site-header">
+<header class="site-header" data-header>
   <div class="wrap bar">
     <a class="brand" href="/">
       <svg class="star" viewBox="-50 -50 100 100" aria-hidden="true"
@@ -17,13 +17,46 @@ const links = [
       >
       {person.name}
     </a>
-    <nav aria-label="Main">
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+      <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="menu-label">Menu</span>
+    </button>
+
+    <nav aria-label="Main" id="site-menu" class="menu" data-menu>
       <ul>
         {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
       </ul>
     </nav>
   </div>
 </header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]');
+  const toggle = header?.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const menu = header?.querySelector<HTMLElement>('[data-menu]');
+
+  if (header && toggle && menu) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      header.classList.toggle('is-open', open);
+    };
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    // Close after choosing a link, on Escape, or when tapping outside
+    menu.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && header.classList.contains('is-open')) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (!header.contains(e.target as Node)) setOpen(false);
+    });
+  }
+</script>
 
 <style>
   /* Two pale-blue stripes from the Chicago flag */
@@ -41,11 +74,12 @@ const links = [
     position: sticky;
     top: 0;
     z-index: 5;
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
   }
   .bar {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -87,10 +121,74 @@ const links = [
     color: var(--sky-deep);
     text-decoration: underline;
   }
-  @media (max-width: 36rem) {
-    nav li:nth-child(2),
-    nav li:nth-child(3) {
+
+  /* Menu button: hidden on wide screens */
+  .menu-toggle {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    font: inherit;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.5rem 0.9rem;
+    cursor: pointer;
+  }
+  .menu-icon {
+    display: grid;
+    gap: 3px;
+    width: 1rem;
+  }
+  .menu-icon span {
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .is-open .menu-icon span:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+  }
+  .is-open .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  .is-open .menu-icon span:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+
+  /* Phones and narrow windows: links move into a drop-down panel */
+  @media (max-width: 40rem) {
+    .menu-toggle {
+      display: inline-flex;
+    }
+    .menu {
       display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 12px 24px rgba(19, 41, 75, 0.08);
+    }
+    .is-open .menu {
+      display: block;
+    }
+    ul {
+      flex-direction: column;
+      gap: 0;
+      padding: 0.5rem var(--gutter) 1rem;
+    }
+    li + li {
+      border-top: 1px solid var(--line);
+    }
+    nav a {
+      display: block;
+      padding: 0.85rem 0;
+      font-size: 1.1rem;
     }
   }
 </style>

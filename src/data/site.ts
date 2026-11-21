@@ -5,9 +5,9 @@ export const person = {
   email: 'asharm8@gmail.com',
   linkedin: 'https://www.linkedin.com/in/asharma87/',
   github: 'https://github.com/asharm8',
-  location: 'Chicago area',
+  location: 'Naperville, IL',
   description:
-    'Abhi Sharma — Senior Drupal engineer and solutions lead with 15+ years building web platforms, and licensed P&C producer leading operations and technology at Insurance World Agency.',
+    'Abhi Sharma — Head of Technology & Operations at Insurance World Agency, fractional CTO, and solutions architect with 15+ years building web platforms, AI and automation, and insurance systems.',
 };
 
 export const agency = {
@@ -21,50 +21,94 @@ export const agency = {
 export const practices = {
   technology: {
     label: 'Technology',
-    lead: 'I architect and ship web platforms.',
+    lead: 'I architect systems and lead the teams that ship them.',
     body:
-      'Fifteen years of Drupal, composable commerce, and API integration work for brands like Wilson Sporting Goods, Enlyte, and Colorado Parks & Wildlife. I take projects from discovery and estimation through architecture and delivery, and I lead the teams that build them.',
+      'Fifteen years across enterprise Drupal, composable commerce, insurance systems, and workflow automation, for organizations like Wilson Sporting Goods, Enlyte, and Colorado Parks & Wildlife. I also serve as a fractional CTO for early-stage ventures, taking work from strategy and estimation through architecture and delivery.',
     cta: { label: 'Email me about a project', href: 'mailto:asharm8@gmail.com?subject=Project%20inquiry' },
     secondary: { label: 'See my work', href: '#work' },
+  },
+  ai: {
+    label: 'AI & automation',
+    lead: 'I build AI that does real work.',
+    body:
+      'AI chatbots, an AI-powered carrier appetite guide, and workflow automation in n8n and Python, running on OpenAI and Anthropic models through OpenRouter and local models with Ollama. As a fractional CTO, I brokered and oversaw delivery of a large AI-powered accounting platform for a client.',
+    cta: { label: 'Email me about an AI project', href: 'mailto:asharm8@gmail.com?subject=AI%20project' },
+    secondary: { label: 'See AI work', href: '#work' },
   },
   insurance: {
     label: 'Insurance',
     lead: 'I can help you get covered.',
     body:
-      "I'm a licensed Property & Casualty producer and part of the leadership team at Insurance World Agency in Downers Grove. We compare 50+ carriers for auto, home, business, and life coverage, for clients in Illinois and 25+ states.",
+      "I've worked in insurance since 2003 and today I'm a licensed Property & Casualty producer on the leadership team at Insurance World Agency in Downers Grove. We compare 50+ carriers for auto, home, business, and life coverage, for clients in Illinois and 25+ states.",
     cta: { label: 'Get a free quote', href: 'https://www.iwainsurance.com' },
     secondary: { label: 'Call (630) 654-6067', href: 'tel:+16306546067' },
   },
 } as const;
 
 export const about = [
-  'I started out writing PHP for a Chicago real estate brokerage and grew into a technical lead, then a solutions lead, at Bounteous. Along the way I delivered Drupal intranets, public-sector sites, and composable eCommerce stacks (Drupal + Magento + Akeneo) — and shaped enterprise proposals that influenced $10MM+ in contracted work.',
-  "Today I bring that engineering mindset to an independent insurance agency. I run day-to-day operations and own the technology: the website, quoting and intake, carrier integrations, and the automations that let a small team serve clients like a much larger one.",
+  "I've been building on the web since 2000, when I launched my first site, animeREV, as a teenager. I've been in insurance almost as long: I started at Insurance World Agency as an agent and IT manager in 2003, while studying at Loyola.",
+  'From there I worked as a business intelligence developer, wrote PHP for a Chicago real estate brokerage, launched a Drupal intranet at First Industrial, and spent eight years at HS2 Solutions (now Bounteous), growing from senior Drupal developer to senior solutions lead. Along the way I delivered composable eCommerce for Wilson Sporting Goods and shaped enterprise proposals that influenced $10MM+ in contracted work.',
+  'Today I lead technology and operations at Insurance World Agency, where I build AI and automation into everyday agency work, and I advise ventures as a fractional CTO through Xlevate and Ryzolv. Throughout, I have taken on independent consulting work for startups, agencies, and businesses in government, insurance, and healthcare.',
 ];
 
 export const skills = [
-  { group: 'Platforms', items: ['Drupal 7–10', 'Acquia Site Studio', 'Magento', 'Akeneo PIM', 'WordPress', 'Symfony', 'React', 'Gatsby'] },
-  { group: 'Languages', items: ['PHP', 'JavaScript / Node.js', 'Python', 'Bash', 'SQL', 'Twig', 'SASS'] },
-  { group: 'Infrastructure', items: ['Docker', 'Linux', 'Apache / Nginx', 'AWS', 'Varnish', 'Akamai', 'CI/CD'] },
-  { group: 'Automation & data', items: ['n8n', 'REST APIs', 'GA / GTM', 'Adobe Analytics', 'Algolia', 'Salesforce'] },
-  { group: 'Leadership', items: ['Architecture', 'Estimation', 'Delivery leadership', 'Stakeholder & vendor management', 'Mentoring'] },
+  { group: 'Leadership', items: ['Technology strategy', 'Operations management', 'Team leadership', 'Vendor coordination', 'Process design', 'Estimation'] },
+  { group: 'Architecture', items: ['API integration', 'Schema-driven design', 'Workflow automation', 'CI/CD', 'Observability', 'Platform modernization'] },
+  { group: 'Languages', items: ['PHP', 'JavaScript / TypeScript', 'Python', 'SQL', 'Bash'] },
+  { group: 'Platforms', items: ['Drupal 7–10', 'Acquia Site Studio', 'React', 'Node.js', 'Symfony', 'Laravel', 'Play Framework', 'Magento', 'WordPress'] },
+  { group: 'Cloud & DevOps', items: ['AWS', 'Azure', 'Docker', 'GitHub Actions', 'Cloudflare', 'Nginx / Apache', 'Varnish', 'Akamai', 'Linux'] },
+  { group: 'AI & LLMs', items: ['OpenAI', 'Anthropic Claude', 'OpenRouter', 'Ollama (local models)', 'AI chatbots', 'LLM workflows in n8n', 'Python'] },
+  { group: 'Data & automation', items: ['PostgreSQL', 'MySQL', 'REST APIs', 'ETL', 'n8n', 'Baserow', 'Algolia'] },
+  { group: 'Domains & tools', items: ['P&C insurance', "Workers' comp", 'Salesforce', 'GA / GTM', 'Jira', 'Confluence', 'Git'] },
 ];
 
 export const experience = [
   {
-    role: 'Head of Operations & Technology',
+    role: 'Head of Technology & Operations',
     company: 'Insurance World Agency',
     url: 'https://www.iwainsurance.com',
     dates: 'May 2023 – Present',
     end: 'Now',
+    since: '2023',
     summary:
       'Leadership team of an independent P&C agency in Downers Grove, IL, founded in 1998, quoting 50+ carriers for clients in Illinois and 25+ states. Licensed Property & Casualty producer.',
     points: [
-      'Co-lead day-to-day agency operations: staffing and hiring, HR policy, team workflows, and service standards across Auto, Home, Life, and Commercial lines.',
-      "Own the agency's technology strategy and stack, from the agency management system and carrier portals to the website, phones, and messaging.",
-      'Rebuilt iwainsurance.com as a modern React site, replacing WordPress, with guided quote intake routed straight to the team.',
-      "Built n8n and API-driven automations that remove manual work, including commission statement processing and routing client texts into the team's Slack.",
-      'Built campaigns and measurement to improve inbound lead quality and grow the agency beyond referrals.',
+      'Lead internal operations, process design, and coordination across producers, CSRs, and leadership.',
+      'Modernized the digital funnel: rebuilt iwainsurance.com as a React site with guided online quoting, plus SEO, content, and tracking to support growth across personal and commercial lines.',
+      'Run self-hosted automations (n8n + PostgreSQL) for task routing, notifications, and audit trails, reducing manual handling and context switching.',
+      'Integrated the agency management system with carrier portals and internal tools through its API and n8n: automated commission retrieval and per-agent statements, routed client texts into Slack, and built a secure API proxy so third-party tools never hold production credentials.',
+      'Built a carrier appetite knowledge base in Baserow and an AI-powered appetite guide (n8n, Python, OpenAI and Anthropic models) to speed up commercial submission triage and placement decisions.',
+      'Support commercial sales as a licensed producer, advising on placement strategy and appetite alignment.',
+    ],
+  },
+  {
+    role: 'Fractional CTO / Technical Advisor',
+    company: 'Xlevate and Ryzolv',
+    url: '',
+    dates: '2021 – Present',
+    end: 'Now',
+    since: '2021',
+    summary:
+      'Xlevate deploys client-hosted AI operational systems for regulated industries; Ryzolv is an AI engineering firm building custom agents and automation.',
+    points: [
+      'Brokered and led delivery of a large engagement building an AI-powered accounting service for businesses: the client came through Xlevate, and I brought in Ryzolv as the development team.',
+      'Build AI chatbots and provide technical oversight across client engagements, stepping into development when needed.',
+      'Define technical strategy, architecture, estimates, and delivery plans; bridge business development and engineering to scope and close engagements.',
+    ],
+  },
+  {
+    role: 'Independent Technology Consultant',
+    company: 'Self-employed',
+    url: '',
+    dates: '2001 – Present, alongside full-time roles',
+    end: 'Now',
+    since: '2001',
+    points: [
+      'Recruited by startups and growing agencies to architect digital solutions, team models, and estimates, and to oversee digital transformation projects in government, insurance, and healthcare.',
+      'Led a globally distributed team of developers to deliver three concurrent projects on deadline.',
+      'Architect and project lead for Enlyte (Mitchell, Genex), engaged through NP Group: led a six-person team of two US designers, a project manager, and three developers in Ukraine to deliver an Acquia Site Studio Drupal 9 multisite with custom modules and REST integrations, unifying the brands during confidential M&A activity.',
+      'Deployed and tuned containerized applications (Docker, Coolify), configured Cloudflare proxying, SSL, and caching, and built CRM integrations and workflow automation for small businesses.',
+      'Developed SEO and marketing strategies to grow traffic to client platforms.',
     ],
   },
   {
@@ -73,6 +117,7 @@ export const experience = [
     url: 'https://www.whereoware.com',
     dates: 'Oct 2024 – Jun 2025',
     end: '2025',
+    since: '2024',
     points: [
       'Delivered Drupal and Spring Boot/Play Framework enhancements for public-sector and non-profit properties, including Colorado Parks & Wildlife and Vote411 (League of Women Voters).',
       'Implemented API integrations, performance tuning, and release hardening across multi-environment pipelines; coordinated with client stakeholders and vendor teams.',
@@ -81,25 +126,30 @@ export const experience = [
   },
   {
     role: 'Senior Solutions Lead',
-    company: 'Bounteous',
+    company: 'Bounteous (formerly HS2 Solutions)',
     url: 'https://www.bounteous.com',
     dates: 'Jul 2021 – Apr 2023',
     end: '2023',
+    since: '2021',
     points: [
-      'Led solutioning for enterprise RFPs and SOWs across DXP, CDP, DAM, and PIM; partnered with SMEs in UX, Analytics, and Media.',
+      'Primary point of contact and enterprise solution expert for new opportunities, guiding client conversations end to end with business development.',
+      'Led solutioning for enterprise RFPs and SOWs across DXP, CDP, DAM, ERP, and PIM; partnered with SMEs in UX, brand, analytics, paid media, and strategy.',
       'Converted ~40% of vetted opportunities into revenue, influencing $10MM+ in contracted work over 12 months.',
-      'Modeled distributed delivery teams and aligned scope, budget, and capability for complex programs.',
+      'Modeled global delivery teams and aligned scope, budget, and capability with leadership for every accepted bid.',
     ],
   },
   {
     role: 'Senior Drupal Developer',
-    company: 'Bounteous',
+    company: 'HS2 Solutions (now Bounteous)',
     url: 'https://www.bounteous.com',
     dates: 'Jul 2015 – Jul 2021',
     end: '2021',
+    since: '2015',
     points: [
       'Technical lead for large eCommerce builds (e.g., Wilson Sporting Goods brands) on a composable stack: Drupal, Magento, and Akeneo PIM.',
-      'Built custom modules, integration middleware, and component libraries; mentored junior developers on standards and agile delivery.',
+      'Supported and enhanced Drupal 7 to 9 sites for Advance Auto Parts, Life Fitness, Parallon (HCA Healthcare), Enterprise Bank & Trust, and Agnesian HealthCare.',
+      'Built custom modules, APIs, and integration middleware for cross-platform stacks; produced documentation and demos to train clients on custom solutions.',
+      'Mentored junior developers and interns on coding standards, agile delivery, frameworks, and requirements gathering.',
       'Translated business requirements into realistic release plans aligned to budget and timelines.',
     ],
   },
@@ -109,6 +159,7 @@ export const experience = [
     url: 'https://www.firstindustrial.com',
     dates: 'Jul 2013 – Jul 2015',
     end: '2015',
+    since: '2013',
     points: [
       'Launched a Drupal 7 intranet with BI reporting (WebFOCUS) to inform executive decision-making; integrated news and communications workflows.',
       'Built features with PHP, MySQL, jQuery, HTML5/CSS3, ColdFusion, and Oracle; partnered with PR/Marketing on automated campaigns.',
@@ -120,24 +171,70 @@ export const experience = [
     url: 'https://www.atproperties.com',
     dates: 'Jul 2011 – Jul 2013',
     end: '2013',
+    since: '2011',
     points: [
       'Developed custom PHP tooling to promote listings and drive lead-to-sale conversion; served as database admin for compliant third-party data feeds.',
       'Resolved advanced production issues; managed the support backlog and vendor escalations.',
     ],
   },
+  {
+    role: 'Business Intelligence Developer',
+    company: 'Enterprise Dashboards Inc.',
+    url: '',
+    dates: 'Sep 2009 – Jun 2011',
+    end: '2011',
+    since: '2009',
+    points: [],
+  },
+  {
+    role: 'Insurance Agent & IT Manager',
+    company: 'Insurance World Agency',
+    url: 'https://www.iwainsurance.com',
+    dates: 'Jul 2003 – Jul 2011',
+    end: '2011',
+    since: '2003',
+    points: [],
+  },
+];
+
+export const projectGroups = [
+  { id: 'ai', title: 'AI & automation' },
+  { id: 'web', title: 'Enterprise web platforms' },
 ];
 
 export const projects = [
   {
+    group: 'ai',
     title: 'Insurance World Agency',
     context: 'Agency website and automation',
     image: '/images/projects/iwa.jpg',
     url: 'https://www.iwainsurance.com',
     linkLabel: 'iwainsurance.com',
-    text: "Rebuilt the agency's site from WordPress into a fast React app with guided quote intake for auto, home, business, and life, routed straight to the team. Backed by n8n automations for messaging and back-office work.",
-    tags: ['React', 'n8n', 'Automation'],
+    text: "Rebuilt the agency's site from WordPress into a fast React app with guided quote intake, then automated the back office around it: an AI-powered carrier appetite guide, commission statement processing, and client texts routed into Slack.",
+    tags: ['React', 'n8n', 'AI', 'Automation'],
   },
   {
+    group: 'ai',
+    title: 'AI-powered accounting service',
+    context: 'Fractional CTO, Xlevate and Ryzolv',
+    image: '',
+    url: '',
+    linkLabel: '',
+    text: 'Brokered and oversaw a large engagement building an AI-powered accounting service for businesses. The client came through Xlevate, and I brought in Ryzolv as the development team.',
+    tags: ['AI', 'Delivery leadership', 'Fractional CTO'],
+  },
+  {
+    group: 'ai',
+    title: 'AI carrier appetite guide',
+    context: 'Insurance World Agency',
+    image: '',
+    url: '',
+    linkLabel: '',
+    text: 'An AI-powered guide that helps the agency find which carriers want a given commercial risk, built on a carrier appetite knowledge base with n8n, Python, and OpenAI and Anthropic models.',
+    tags: ['n8n', 'Python', 'LLMs', 'Insurance'],
+  },
+  {
+    group: 'web',
     title: 'Wilson Sporting Goods',
     context: 'With Bounteous, 2 years',
     image: '/images/projects/wilson.jpg',
@@ -147,15 +244,67 @@ export const projects = [
     tags: ['Drupal', 'Magento', 'Akeneo PIM'],
   },
   {
+    group: 'web',
     title: 'Enlyte',
-    context: '8 months',
+    context: 'Freelance through NP Group, 8 months',
     image: '/images/projects/enlyte.jpg',
     url: 'https://www.enlyte.com',
     linkLabel: 'enlyte.com',
-    text: 'Led a global team to deliver an Acquia Site Studio Drupal 9 multisite with custom modules and REST integrations across enlyte.com, mitchell.com, and genexservices.com.',
-    tags: ['Drupal 9', 'Acquia Site Studio', 'Multisite'],
+    text: 'Architect and project lead for the Enlyte family of brands during confidential M&A activity. Led two US designers, a project manager, and three developers in Ukraine to deliver an Acquia Site Studio Drupal 9 multisite with custom modules and REST integrations across enlyte.com, mitchell.com, and genexservices.com.',
+    tags: ['Drupal 9', 'Acquia Site Studio', 'Multisite', 'Team leadership'],
   },
   {
+    group: 'web',
+    title: 'Advance Auto Parts',
+    context: 'HS2 Solutions / Bounteous',
+    image: '/images/projects/advance-auto-parts.jpg',
+    url: 'https://shop.advanceautoparts.com/r/',
+    linkLabel: 'Advice & How-Tos',
+    text: "Supported and enhanced the Drupal-powered advice and how-to content hub, from Drupal 7 through Drupal 9.",
+    tags: ['Drupal 7–9', 'Content platform', 'Retail'],
+  },
+  {
+    group: 'web',
+    title: 'Life Fitness',
+    context: 'HS2 Solutions / Bounteous',
+    image: '/images/projects/life-fitness.jpg',
+    url: 'https://www.lifefitness.com',
+    linkLabel: 'lifefitness.com',
+    text: 'Supported and enhanced the global commercial and home fitness equipment site, from Drupal 7 through Drupal 9.',
+    tags: ['Drupal 7–9', 'Global site', 'Manufacturing'],
+  },
+  {
+    group: 'web',
+    title: 'Parallon',
+    context: 'HCA Healthcare, HS2 Solutions / Bounteous',
+    image: '/images/projects/parallon.jpg',
+    url: 'https://parallon.com',
+    linkLabel: 'parallon.com',
+    text: "Supported and enhanced the site for HCA Healthcare's revenue cycle and shared services company, from Drupal 7 through Drupal 9.",
+    tags: ['Drupal 7–9', 'Healthcare'],
+  },
+  {
+    group: 'web',
+    title: 'Enterprise Bank & Trust',
+    context: 'HS2 Solutions / Bounteous',
+    image: '/images/projects/enterprise-bank.jpg',
+    url: 'https://www.enterprisebank.com',
+    linkLabel: 'enterprisebank.com',
+    text: 'Supported and enhanced the public banking site, from Drupal 7 through Drupal 9.',
+    tags: ['Drupal 7–9', 'Financial services'],
+  },
+  {
+    group: 'web',
+    title: 'Agnesian HealthCare',
+    context: 'Now part of SSM Health, HS2 Solutions / Bounteous',
+    image: '',
+    url: '',
+    linkLabel: '',
+    text: "Supported and enhanced the health system's Drupal site before it joined SSM Health.",
+    tags: ['Drupal', 'Healthcare'],
+  },
+  {
+    group: 'web',
     title: 'Colorado Parks & Wildlife',
     context: 'Whereoware engagement',
     image: '/images/projects/cpw.jpg',
@@ -165,6 +314,7 @@ export const projects = [
     tags: ['Drupal', 'Performance', 'Public sector'],
   },
   {
+    group: 'web',
     title: 'Vote411',
     context: 'League of Women Voters, Whereoware engagement',
     image: '/images/projects/vote411.jpg',
@@ -174,6 +324,7 @@ export const projects = [
     tags: ['Drupal', 'Spring Boot', 'APIs'],
   },
   {
+    group: 'web',
     title: 'First Industrial intranet',
     context: '3 months',
     image: '/images/projects/first-industrial.jpg',
@@ -183,6 +334,7 @@ export const projects = [
     tags: ['Drupal 10', 'Migration', 'Security'],
   },
   {
+    group: 'web',
     title: 'U.S. District Court, W.D. Oklahoma',
     context: '2 months',
     image: '/images/projects/okwd.jpg',
@@ -201,6 +353,9 @@ export const education = [
 
 export const certifications = [
   { name: 'Insurance Producer License, Property & Casualty', issuer: 'Insurance World Agency' },
+  { name: 'AWS Certified Cloud Practitioner', issuer: 'Amazon Web Services' },
+  { name: 'Azure Fundamentals', issuer: 'Microsoft' },
+  { name: 'Linux Administration', issuer: '' },
   { name: 'Acquia Certified Developer, Drupal 9', issuer: 'Acquia' },
   { name: 'Acquia Certified Developer, Drupal 8', issuer: 'Acquia' },
   { name: 'Acquia Certified Developer, Drupal 7', issuer: 'Acquia' },

@@ -1,29 +1,56 @@
 ---
 import Section from './Section.astro';
-import { projects } from '../data/site';
+import { projects, projectGroups } from '../data/site';
+
+const groups = projectGroups
+  .map((g) => ({ ...g, items: projects.filter((p) => p.group === g.id) }))
+  .filter((g) => g.items.length > 0);
 ---
 
 <Section id="work" title="Selected work">
-  <ul class="projects">
-    {
-      projects.map((p) => (
-        <li class="project">
-          <a class="shot" href={p.url} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src={p.image} alt="" width="1200" height="754" loading="lazy" />
-          </a>
-          <h3>
-            <a href={p.url} target="_blank" rel="noopener">{p.title}</a>
-          </h3>
-          <p class="meta">{p.context}</p>
-          <p class="text">{p.text}</p>
-          <p class="meta tags">{p.tags.join(', ')}</p>
-        </li>
-      ))
-    }
-  </ul>
+  {
+    groups.map((g) => (
+      <div class="group">
+        <h3 class="group-title">{g.title}</h3>
+        <ul class="projects">
+          {g.items.map((p) => (
+            <li class:list={['project', { 'no-image': !p.image }]}>
+              {p.image && (
+                <a class="shot" href={p.url || undefined} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                  <img src={p.image} alt="" width="1200" height="754" loading="lazy" />
+                </a>
+              )}
+              <h4>
+                {p.url ? (
+                  <a href={p.url} target="_blank" rel="noopener">
+                    {p.title}
+                  </a>
+                ) : (
+                  p.title
+                )}
+              </h4>
+              <p class="meta">{p.context}</p>
+              <p class="text">{p.text}</p>
+              <p class="meta tags">{p.tags.join(', ')}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
 </Section>
 
 <style>
+  .group + .group {
+    margin-top: clamp(3.5rem, 7vw, 5rem);
+  }
+  .group-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-stretch: 112%;
+    color: var(--sky-deep);
+    margin-bottom: 1.75rem;
+  }
   .projects {
     list-style: none;
     margin: 0;
@@ -32,7 +59,7 @@ import { projects } from '../data/site';
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 3.5rem 2.5rem;
   }
-  /* The first project (current work) spans the full width */
+  /* The first project in each group spans the full width */
   .project:first-child {
     grid-column: 1 / -1;
     display: grid;
@@ -43,8 +70,13 @@ import { projects } from '../data/site';
   .project:first-child .shot {
     grid-row: 1 / span 5;
   }
-  .project:first-child h3 {
+  .project:first-child h4 {
     font-size: 1.9rem;
+  }
+  /* Projects without a screenshot get a sky-blue top rule instead */
+  .project.no-image {
+    border-top: 3px solid var(--sky);
+    padding-top: 1.1rem;
   }
   .shot {
     display: block;
@@ -64,18 +96,21 @@ import { projects } from '../data/site';
   .project:hover .shot img {
     transform: scale(1.025);
   }
-  h3 {
+  h4 {
+    font-family: var(--sans);
     font-size: 1.45rem;
     font-weight: 750;
     font-stretch: 110%;
     letter-spacing: -0.01em;
-    margin-bottom: 0.3rem;
+    line-height: 1.1;
+    margin: 0 0 0.3rem;
+    text-wrap: balance;
   }
-  h3 a {
+  h4 a {
     color: var(--ink);
     text-decoration: none;
   }
-  h3 a:hover {
+  h4 a:hover {
     text-decoration: underline;
     text-decoration-color: var(--sky);
     text-decoration-thickness: 2px;
