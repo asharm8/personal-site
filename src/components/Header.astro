@@ -1,0 +1,96 @@
+---
+import { person } from '../data/site';
+const links = [
+  { href: '#work', label: 'Work' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#about', label: 'About' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<div class="flag" aria-hidden="true"><span></span><span></span></div>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/">
+      <svg class="star" viewBox="-50 -50 100 100" aria-hidden="true"
+        ><polygon points="0,-46 11,-19 39,-23 22,0 39,23 11,19 0,46 -11,19 -39,23 -22,0 -39,-23 -11,-19"></polygon></svg
+      >
+      {person.name}
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  /* Two pale-blue stripes from the Chicago flag */
+  .flag {
+    display: grid;
+    gap: 5px;
+    padding-block: 5px;
+    background: var(--paper);
+  }
+  .flag span {
+    height: 5px;
+    background: var(--sky);
+  }
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 4rem;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-stretch: 118%;
+    font-size: 1.05rem;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .star {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: var(--red);
+  }
+  ul {
+    display: flex;
+    gap: clamp(0.9rem, 2.5vw, 2rem);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    font-family: var(--sans);
+    font-size: 0.98rem;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  nav a:hover {
+    color: var(--sky-deep);
+    text-decoration: underline;
+  }
+  @media (max-width: 36rem) {
+    nav li:nth-child(2),
+    nav li:nth-child(3) {
+      display: none;
+    }
+  }
+</style>

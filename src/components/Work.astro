@@ -1,0 +1,102 @@
+---
+import Section from './Section.astro';
+import { projects } from '../data/site';
+---
+
+<Section id="work" title="Selected work">
+  <ul class="projects">
+    {
+      projects.map((p) => (
+        <li class="project">
+          <a class="shot" href={p.url} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src={p.image} alt="" width="1200" height="754" loading="lazy" />
+          </a>
+          <h3>
+            <a href={p.url} target="_blank" rel="noopener">{p.title}</a>
+          </h3>
+          <p class="meta">{p.context}</p>
+          <p class="text">{p.text}</p>
+          <p class="meta tags">{p.tags.join(', ')}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Section>
+
+<style>
+  .projects {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3.5rem 2.5rem;
+  }
+  /* The first project (current work) spans the full width */
+  .project:first-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    column-gap: 2.5rem;
+    align-items: start;
+  }
+  .project:first-child .shot {
+    grid-row: 1 / span 5;
+  }
+  .project:first-child h3 {
+    font-size: 1.9rem;
+  }
+  .shot {
+    display: block;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--sky-pale);
+    margin-bottom: 1.1rem;
+  }
+  .shot img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.4s ease;
+  }
+  .project:hover .shot img {
+    transform: scale(1.025);
+  }
+  h3 {
+    font-size: 1.45rem;
+    font-weight: 750;
+    font-stretch: 110%;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.3rem;
+  }
+  h3 a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  h3 a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--sky);
+    text-decoration-thickness: 2px;
+  }
+  .meta {
+    margin-bottom: 0.7rem;
+  }
+  .text {
+    margin-bottom: 0.6rem;
+  }
+  .tags {
+    color: var(--sky-deep);
+    font-weight: 500;
+  }
+  @media (max-width: 52rem) {
+    .projects,
+    .project:first-child {
+      grid-template-columns: 1fr;
+    }
+    .project:first-child .shot {
+      grid-row: auto;
+    }
+  }
+</style>

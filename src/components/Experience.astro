@@ -1,0 +1,85 @@
+---
+import Section from './Section.astro';
+import { experience } from '../data/site';
+---
+
+<Section id="experience" title="Experience">
+  <ol class="timeline">
+    {
+      experience.map((job) => (
+        <li class="job">
+          <p class="year" aria-hidden="true">{job.end}</p>
+          <div class="detail">
+            <h3>{job.role}</h3>
+            <p class="meta">
+              <a href={job.url} target="_blank" rel="noopener">{job.company}</a>, {job.dates}
+            </p>
+            {job.summary && <p class="summary">{job.summary}</p>}
+            <ul>
+              {job.points.map((pt) => <li>{pt}</li>)}
+            </ul>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</Section>
+
+<style>
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .job {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: 1.5rem;
+    padding-bottom: 2.75rem;
+    position: relative;
+  }
+  .job + .job {
+    padding-top: 2.75rem;
+    border-top: 1px solid var(--line);
+  }
+  .year {
+    font-family: var(--sans);
+    font-weight: 800;
+    font-stretch: 125%;
+    font-size: 1.9rem;
+    line-height: 1;
+    color: var(--sky);
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+  }
+  h3 {
+    font-size: 1.35rem;
+    font-weight: 750;
+    font-stretch: 108%;
+    margin-bottom: 0.3rem;
+  }
+  .meta {
+    margin-bottom: 0.9rem;
+  }
+  .summary {
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+  ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    max-width: 44rem;
+  }
+  li li {
+    margin-bottom: 0.45rem;
+  }
+  li li::marker {
+    color: var(--sky);
+  }
+  @media (max-width: 36rem) {
+    .job {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+    }
+  }
+</style>

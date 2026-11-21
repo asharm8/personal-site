@@ -1,0 +1,43 @@
+# Move this file to .github/workflows/deploy-astro.yml to enable automatic deploys.
+#
+# Builds the Astro site and publishes it to asharm8/asharm8.github.io on every
+# push to main (Hugo backup changes are ignored). Can also be run manually.
+#
+# One-time setup (see README.md):
+#   1. Add a deploy key's PUBLIC half to asharm8/asharm8.github.io
+#      (Settings > Deploy keys) with write access.
+#   2. Add the PRIVATE half to this repo as the secret ACTIONS_DEPLOY_KEY.
+
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['hugo-backup/**', '**.md']
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-site
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build:only
+
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: asharm8/asharm8.github.io
+          publish_branch: main
+          publish_dir: ./dist
+          commit_message: 'Deploy from personal-site'
